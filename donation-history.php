@@ -9,7 +9,7 @@ Author: Manthan Desai
 
 // Add new endpoint to WooCommerce
 function custom_add_my_account_endpoint() {
-    add_rewrite_endpoint( 'donation-endpoint', EP_PAGES ); // Change 'my-custom-endpoint' to your desired endpoint slug
+    add_rewrite_endpoint( 'donation-history', EP_PAGES ); // Change 'my-custom-endpoint' to your desired endpoint slug
 }
 add_action( 'init', 'custom_add_my_account_endpoint' );
 
@@ -88,11 +88,11 @@ function custom_donation() {
 
 	}
 }
-add_action( 'woocommerce_account_donation-endpoint_endpoint', 'custom_donation' );
+add_action( 'woocommerce_account_donation-history_endpoint', 'custom_donation' );
 
 // Add menu item for the new endpoint
 function custom_add_my_account_menu_item( $items ) {
-    $items['donation-endpoint'] = 'Donation'; // Change 'My Custom Endpoint' to your desired menu item label
+    $items['donation-history'] = 'Donation'; // Change 'My Custom Endpoint' to your desired menu item label
     return $items;
 }
 add_filter( 'woocommerce_account_menu_items', 'custom_add_my_account_menu_item', 10);
